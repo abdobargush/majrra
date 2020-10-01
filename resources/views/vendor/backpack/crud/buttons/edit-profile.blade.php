@@ -1,0 +1,1 @@
+<a href="{{ url( config('backpack.base.route_prefix') . '/profile/' . $entry->getKey() . '/edit') }} " class="btn btn-xs btn-link"><i class="la la-user-circle"></i> {{ __('Edit Profile') }}</a>

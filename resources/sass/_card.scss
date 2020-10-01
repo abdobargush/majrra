@@ -1,0 +1,124 @@
+.cards-catalog {
+	margin-bottom: 10px;
+}
+.card {
+	border: 0;
+	margin-bottom: 20px;
+	box-shadow: $shadow-z1;
+	transition: transform .3s ease,
+				box-shadow .3s ease;
+
+	&.has-hover:hover {
+		box-shadow: 0 10px 15px rgba(55, 71, 79, .15);
+		transform: translateY(-5px);
+	}
+
+	> a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.card-body {
+		padding: 20px;
+	}
+	.card-title {
+		font-family: $font-body;
+		font-weight: 700;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+	.card-text {
+		color: #546E7A;
+	}
+}
+
+
+/*--------------------------------------------------------------
+5.1 Path Card
+--------------------------------------------------------------*/
+.card-path .card-img-top {
+	padding: 20px 20px 0 20px;
+}
+.card-path .card-meta {
+	color: #546E7A;
+	font-weight: 700;
+}
+
+/*--------------------------------------------------------------
+5.2 Tool Card
+--------------------------------------------------------------*/
+.card-tool {
+	padding: 15px;
+}
+.card-tool > a {
+	display: flex;
+	align-items: center;
+}
+.card-tool .card-img {
+	width: 68px;
+	height: 68px;
+	margin-left: 20px;
+	border-radius: 0;
+}
+.card-tool .card-title {
+	margin-bottom: 10px;
+}
+.card-tool .card-body {
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+5.3 Course Card
+--------------------------------------------------------------*/
+.card.card-course {
+	transition: none;
+}
+.card.card-course:hover {
+	transform: none;
+	box-shadow: 0 6px 10px rgba(55, 71, 79, .1);
+}
+.card-course-upvote {
+	color: #1A237E;
+	background-color: rgba(26, 35, 126, .1);
+	border-radius: 5px;
+	width: 50px;
+	min-height: 65px;
+	border: 0;
+	margin-left: 20px;
+	transition: .3s ease;
+
+	&.active {
+		color: #fff;
+		background-color: #1A237E;
+	}
+}
+.card-course-upvote:hover {
+	color: #fff;
+	background-color: #1A237E;
+}
+.card-course-upvote:focus, .card-course-upvote:active {
+	outline: none;
+}
+
+.tags-list {
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 0;
+
+	li {
+		display: inline-block;
+		margin-left: 5px;
+		font-size: 14px;
+		padding: 0 10px;
+		color: #1A237E;
+		background-color: rgba(26, 35, 126, .1);
+		border-radius: 5px;
+	
+		&:last-child {
+			margin-left: 0;
+		}
+	}
+}

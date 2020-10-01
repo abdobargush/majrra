@@ -1,0 +1,22 @@
+.alert {
+	border: 0;
+	border-radius: 5px;
+	padding: 10px 15px;
+
+	&.alert-dismissible {
+		padding-left: 45px;
+	}
+}
+.alert-success {
+	background-color: $color-success;
+	color: #fff;
+}
+.alert-danger {
+	background-color: $color-danger;
+	color: #fff;
+}
+.alert-dismissible .close {
+	left: 0;
+	padding: 10px;
+	right: auto;
+}

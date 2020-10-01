@@ -1,0 +1,20 @@
+.list-group {
+	border: 0;
+	border-radius: 5px;
+	box-shadow: $shadow-z1;
+
+	.list-group-item {
+		border: 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+		&:last-child {
+			border-bottom: 0;
+		}
+		&.active {
+			margin-top: 0;
+			border: 0;
+			border-bottom: 1px solid $color-primary;
+			background-color: $color-primary;
+		}
+	}
+}

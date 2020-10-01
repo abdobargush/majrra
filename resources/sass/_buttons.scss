@@ -1,0 +1,76 @@
+.btn {
+	padding: 10px 35px;
+	font-size: 20px;
+	border: 0;
+	border-radius: 5px;
+	outline: none;
+}
+
+.btn-primary {
+	background: #1A237E url('/images/bg-btn@2x.png') no-repeat center;
+	border: 0;
+	background-size: cover;
+	font-weight: 700;
+	box-shadow: 0 6px 10px rgba(55, 71, 79, .1);
+}
+.btn-white {
+	color: #1A237E;
+	background-color: #fff;
+
+	&:hover, &:focus, &:active {
+		color: #1A237E;
+	}
+}
+.btn-outline-white {
+	border: 1px solid #fff;
+	color: #fff;
+
+	&:hover, &:focus {
+		color: #1A237E;
+		background-color: #fff;
+	}
+}
+.btn-twitter {
+	background-color: #1da1f2;
+	color: #fff;
+
+	&:hover, &:focus {
+		color: #fff;
+	}
+}
+
+.btn-sm {
+	padding: 10px 20px;
+	font-size: 16px;
+}
+
+.bookmark-btn {
+	color: #546E7A;
+	font-size: 14px;
+	padding: 0;
+
+	&:hover, &:focus, &:active {
+		color: #546E7A;
+		box-shadow: none;
+	}
+	&.is-bookmarked {
+		font-weight: 700;
+
+		.material-icons {
+			&::before {
+				font-family: 'Material Icons';
+				content: 'bookmark';
+			}
+		}
+	}
+
+	.material-icons {
+		font-size: 20px;
+		margin-left: 0;
+
+		&::before {
+			font-family: 'Material Icons';
+			content: 'bookmark_outline';
+		}
+	}
+}

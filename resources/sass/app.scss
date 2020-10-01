@@ -1,0 +1,26 @@
+// Fonts
+@import 'fonts';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Select2
+@import '~select2/src/scss/core';
+
+@import 'base';
+@import 'buttons';
+@import 'forms';
+@import 'navbar';
+@import 'header';
+@import 'modals';
+@import 'alert';
+@import 'card';
+@import 'list-group';
+@import 'nav';
+@import 'search';
+@import 'footer';
+@import 'filter-box';
+

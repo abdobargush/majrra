@@ -1,0 +1,61 @@
+@import 'fonts';
+
+@import 'variables';
+
+body {
+	font-family: $font-body;
+	background-color: $color-bg;
+}
+.navbar {
+	background: transparent!important;
+}
+.navbar-brand {
+	color: $color-primary!important;
+	font-family: $font-heading;
+	opacity: 1!important;
+}
+.sidebar {
+	background: #1A237E url("/images/bg-tall@2x.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%!important;
+	top: 0;
+
+	.nav-logo {
+		font-size: 28px;
+		font-family: $font-heading;
+		margin-right: .5rem;
+		margin-bottom: 20px;
+		font-weight: 700;
+		
+		a {
+			color: #fff!important;
+			text-decoration: none;
+		}
+	}
+	.sidebar-nav, .sidebar-scroll {
+		width: auto;
+	}
+	.nav {
+		width: auto;
+	}
+}
+.sidebar.sidebar-pills .nav-link, .sidebar.sidebar-pills .nav-title {
+	color: #fff!important;
+
+	&:hover {
+		color: #fff!important;
+	}
+
+	&.active {
+		color: #fff!important;
+		background-color: rgba($color: #fff, $alpha: 0.2);
+	}
+
+	.nav-icon {
+		color: #fff!important;
+	}
+}
+.dataTables_filter {
+	text-align: end!important;
+}

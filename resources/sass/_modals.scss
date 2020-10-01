@@ -1,0 +1,106 @@
+.modal-dialog {
+	margin-top: 40px;
+}
+.modal-content {
+	border: 0;
+	box-shadow: 0 12px 30px rgba(55, 71, 79, .1);
+
+	> .close {
+		position: absolute;
+		left: 0;
+		top: -25px;
+		font-weight: 400;
+		font-size: 14px;
+		color: #fff;
+		text-shadow: none;
+		opacity: 1;
+		text-decoration: underline;
+	}
+}
+.modal-backdrop {
+	background-color: #1A237E;
+	backdrop-filter: blur(10px);
+	opacity: .85!important;
+}
+.modal-divider {
+	position: relative;
+	margin: 20px 0;
+	color: #fff;
+	text-align: center;
+
+	&::before, &::after  {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 50%;
+		width: 45%;
+		height: 1px;
+		background-color: #fff;
+		transform: translateY(-50%);
+	}
+	&::after {
+		left: 0;
+	}
+}
+.modal-footer {
+	justify-content: center;
+	border-top: 0;
+	padding-top: 0;
+	padding-bottom: 30px;
+	color: #fff;
+
+	a {
+		color: #fff;
+		text-decoration: underline;
+		font-weight: 700;
+	}
+}
+@media screen and (min-width: 576px) {
+	.modal-dialog {
+		margin: 60px auto;
+	}
+}
+
+/*--------------------------------------------------------------
+Custom Modal
+--------------------------------------------------------------*/
+.modal-custom {
+	
+	.modal-content {
+		background: url('/images/bg-sm@2x.jpg') no-repeat top center;
+		background-size: cover;
+	}
+	.modal-title {
+		color: #fff;
+		font-size: 24px;
+		font-weight: 700;
+	}
+	.modal-header {
+		color: #fff;
+		border-bottom: 0;
+		padding: 40px 30px 10px 30px;
+		justify-content: center;
+	}
+	.modal-body {
+		padding: 30px;
+	}
+
+	.form-control {
+		height: auto;
+		padding: 15px 20px;
+		border: 0;
+		color: #fff!important;
+		background-color: rgba(255, 255, 255, .2);
+		backdrop-filter: blur(5px);
+	
+		&:focus {
+			background-color: rgba(255, 255, 255, .25);
+		}
+		&::placeholder {
+			color: #ECEFF1!important;
+		}
+		&.error {
+			border: 1px solid $color-danger;
+		}
+	}
+}
