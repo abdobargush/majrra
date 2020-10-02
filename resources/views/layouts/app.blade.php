@@ -27,7 +27,7 @@
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 
-	gtag('config', {{ env('GOOGLE_TRACKING_ID') }} );
+	gtag('config', '{{ env('GOOGLE_TRACKING_ID') }}' );
 	</script>
 	@endif
 
