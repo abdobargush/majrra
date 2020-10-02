@@ -25,7 +25,7 @@
 					<div style="flex:1">
 						<a href="{{ $tutorial->url }}" target="_blank">
 							{{ $tutorial->title }}
-							<span class="ont-weight-normal small mr-1">({{ $tutorial->domain }})</span>
+							<span class="d-inline-block font-weight-normal small mr-1">({{ $tutorial->domain }})</span>
 						</a>
 					</div>
 
