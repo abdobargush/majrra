@@ -65,7 +65,7 @@
 					<div class="col">
 						<p class="credits">
 							© المحتوى منشور تحت
-							<a href="#">رخصة المشاع الإبداعي BY-SA</a>
+							<a href="https://creativecommons.org/licenses/by-sa/4.0/">رخصة المشاع الإبداعي BY-SA</a>
 						</p>
 					</div>
 				</div>
