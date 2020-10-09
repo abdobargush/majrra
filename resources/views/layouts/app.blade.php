@@ -8,16 +8,39 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
+	<!-- Primary Meta Tags -->
 	<title>@yield('title') @unless (Request::is('/')) | {{ __( config('app.name') ) }} @endunless</title>
+	<meta name="title" content="@yield('title') @unless (Request::is('/')) | {{ __( config('app.name') ) }} @endunless">
+	<meta name="description" content="@yield('description')">
 
-	<!-- Scripts -->
-	<script src="{{ asset('js/app.js') }}" defer></script>
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="{{ Request::url() }}">
+	<meta property="og:title" content="@yield('title') @unless (Request::is('/')) | {{ __( config('app.name') ) }} @endunless">
+	<meta property="og:description" content="@yield('description')">
+	<meta property="og:image" content="@yield('metaImage', asset('/images/logo-meta.png'))">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="{{ Request::url() }}">
+	<meta property="twitter:title" content="@yield('title') @unless (Request::is('/')) | {{ __( config('app.name') ) }} @endunless">
+	<meta property="twitter:description" content="@yield('description')">
+	<meta property="twitter:image" content="@yield('metaImage', asset('/images/logo-meta.png'))"">
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
 
 	<!-- Material Icons CSS-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+	
 	<!-- Styles -->
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+	<!-- Scripts -->
+	<script src="{{ asset('js/app.js') }}" defer></script>
 
 	@if( env('GOOGLE_TRACKING_ID') )	
 	<!-- Google Analytics -->
