@@ -10,7 +10,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 class Tool extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
-    
+
     /**
      * Fillable attributes
      *
@@ -38,27 +38,26 @@ class Tool extends Model
     public function setThumbnailAttribute($value)
     {
         $attribute_name = "thumbnail";
-        $disk = env('FILESYSTEM_CLOUD') ? config('filesystems.cloud') : 'public'; 
+        $disk = config('filesystems.cloud') ?? 'public';
         // destination path relative to the disk above
-        $destination_path = "uploads/tools"; 
+        $destination_path = "uploads/tools";
 
         // if the image was erased
-        if ($value==null) {
+        if ($value == null) {
             // delete the image from disk
-            Storage::disk($disk)->delete( $this->getRawOriginal($attribute_name) );
+            Storage::disk($disk)->delete($this->getRawOriginal($attribute_name));
 
             // set null in the database column
             $this->attributes[$attribute_name] = null;
         }
 
         // if a base64 was sent, store its path in the db
-        if (Str::startsWith($value, 'data:image'))
-        {
+        if (Str::startsWith($value, 'data:image')) {
             // 0. Make the image
             $image = Image::make($value)->encode('png')->fit(256, 256);
 
             // 1. Generate a filename.
-            $filename = md5($value.time()).'.png';
+            $filename = md5($value . time()) . '.png';
 
             // 2. Store the image on disk.
             Storage::disk($disk)->put("{$destination_path}/{$filename}", $image->stream());
@@ -83,13 +82,20 @@ class Tool extends Model
      **/
     public function getThumbnailAttribute($value)
     {
-        return (env('FILESYSTEM_CLOUD') && $value
-               ? Storage::disk( config('filesystems.cloud') )->url($value) 
-               : $value)
-               ?? asset('images/tool-default@2x.png');
+        // Return default thumbnail if not set
+        if (!$value) return asset('images/tool-default@2x.png');
+
+        // Return value if it's a url
+        if (substr($value, 0, 4) === 'http') return $value;
+
+        // Return from cloud if set
+        if (config('filesystems.cloud')) return Storage::cloud()->url($value);
+
+        // Return from public storage if no cloud storage
+        return Storage::disk('public')->url($value);
     }
 
-    
+
     /**
      * 1-n relationship
      * 
@@ -101,5 +107,4 @@ class Tool extends Model
     {
         return $this->belongsToMany(Tutorial::class);
     }
-
 }
