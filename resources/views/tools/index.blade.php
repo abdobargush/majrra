@@ -15,7 +15,7 @@
 <div id="content" class="container mb-4">
     <div class="row justify-content-center">
 		@foreach ($tools as $tool)
-			<div class="col-12 col-md-4">
+			<div class="col-12 col-md-6 col-lg-4">
 				@include('components.tool-card', compact('tool'))
 			</div>
 		@endforeach
