@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', 'مجرة - مصادر ومسارات متكاملة لتتعلم ما تحب')
+@section('description', 'مجتمع مشاركة المصادر التعليمية ومسارات التعلم المتكاملة في مختلف المجالات وخاصة المرتبطة بالتقنية.')
 
 @section('content')	
 <!-- Header -->
@@ -7,7 +8,7 @@
 	<div class="row justify-content-center">
 		<div class="col col-md-8 col-lg-6 text-center">
 			<h1 class="header-title">
-				مجرة ... مصادر و مسارات متكاملة <br>لتتعلم ما تحب
+				مجرة ... مصادر تعليمية و مسارات متكاملة <br>لتتعلم ما تحب
 			</h1>
 			<div class="header-search">
 				<form action="/search" class="search-form" data-selector="search-form">

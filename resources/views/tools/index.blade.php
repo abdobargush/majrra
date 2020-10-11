@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title', 'جميع التقنيات والأدوات')
+@section('description', 'تصفح جميع الأدوات والتقنيات المنشورة على مجرة وتعلم ماتحب. أفضل الكورسات والمصادر التعليمية في مختلف المجالات مصنفة ومرتبة حسب الأداة والتقنية.')
+
 @section('content')
 <header class="before-content">
 	<div class="container">

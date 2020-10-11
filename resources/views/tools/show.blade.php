@@ -1,13 +1,14 @@
 @extends('layouts.app')
-@section('title', $tool->title)
+@section('title', "تعلم {$tool->title}: [" . date("Y") . "] أفضل كورسات وشروحات {$tool->title}")
+@section('description', "تريد تعلم {$tool->title}? تصفح أفضل الكورسات والمصادر التعليمية لتعلم {$tool->title} والتي يقوم المستخدمون بمشاركتها على مجرة والتصويت عليها.")
+@section('metaImage', $tool->thumbnail)
 
 @section('content')
-
 <header class="before-content">
 	<div class="container">
 		<div class="col-12">
 			<div class="tool-heading">
-				<img class="tool-pic" src="{{ (substr($tool->thumbnail, 0, 4) === 'http') ? $tool->thumbnail : "/{$tool->thumbnail}" }}" alt="tool-image">
+				<img class="tool-pic" src="{{ $tool->thumbnail }}" alt="tool-image">
 				<div class="tool-info">
 					<h3 class="tool-title">{{ $tool->title }}</h3>
 					<div class="tool-source-info">

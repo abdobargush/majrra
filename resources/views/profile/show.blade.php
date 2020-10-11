@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title', $profile->name ? $profile->name : $profile->username)
+@section('description', "يقوم {$profile->name} بمشاركة الكورسات والمصادر التعليمية على مجرة ويقوم بالتصويت عليها. تصفح الشروحات التي يقوم {$profile->name} بمشاركتها على مجرة.")
+@section('metaImage', $profile->getAvatar('400'))
 
 @section('content')
 <!-- Header -->
