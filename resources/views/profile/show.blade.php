@@ -36,10 +36,24 @@
 
 			<ul class="nav nav-tabs nav-fill w-100" id="tutorialsTab" role="tablist">
 				<li class="nav-item" role="presentation">
-					<a class="nav-link active" id="added-tab" data-toggle="tab" href="#added" role="tab" aria-controls="added" aria-selected="true">{{ __('Submitted') }}</a>
+					<a class="nav-link @unless( Request::has('upvoted') ) active @endunless" 
+						id="added-tab" data-toggle="tab" 
+						href="#added" role="tab" 
+						aria-controls="added" 
+						aria-selected="true"
+					>
+						{{ __('Submitted') }}
+					</a>
 				</li>
 				<li class="nav-item" role="presentation">
-					<a class="nav-link" id="upvoted-tab" data-toggle="tab" href="#upvoted" role="tab" aria-controls="upvoted" aria-selected="false">{{ __('Upvoted') }}</a>
+					<a class="nav-link @if( Request::has('upvoted') ) active @endif"
+						id="upvoted-tab" data-toggle="tab" 
+						href="#upvoted" role="tab" 
+						aria-controls="upvoted" 
+						aria-selected="false"
+					>
+						{{ __('Upvoted') }}
+					</a>
 				</li>
 			</ul>
 
@@ -55,11 +69,11 @@
 		<div class="col col-md-9">
 			<div class="tab-content" id="tutorialsTabContent">
 
-				<div class="tab-pane fade show active" id="added" role="tabpanel" aria-labelledby="added-tab">
+				<div class="tab-pane fade @unless( Request::has('upvoted') ) show active @endunless" id="added" role="tabpanel" aria-labelledby="added-tab">
 					<x-tutorials-list :tutorials="$addedTutorials"></x-tutorials-list>
 				</div>
 
-				<div class="tab-pane fade" id="upvoted" role="tabpanel" aria-labelledby="upvoted-tab">
+				<div class="tab-pane fade @if( Request::has('upvoted') ) show active @endif" id="upvoted" role="tabpanel" aria-labelledby="upvoted-tab">
 					<x-tutorials-list :tutorials="$upvotedTutorials"></x-tutorials-list>
 				</div>
 

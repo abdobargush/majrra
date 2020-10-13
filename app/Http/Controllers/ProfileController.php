@@ -26,15 +26,17 @@ class ProfileController extends Controller
 		$profile->username = $username;
 
 		// Get tutorials added by the user
-		$addedTutorials = $user->tutorials()->without(['addedBy', 'addedBy.profile'])->get();
+		$addedTutorials = $user->tutorials()
+			->without(['addedBy', 'addedBy.profile'])
+			->paginate(10, ['*'], 'added');
+
 		foreach ($addedTutorials as $tutorial) {
 			$tutorial->addedBy = $user;
 		}
 
 		// Get tutorials upvoted by the user
-		$upvotedTutorials = $user->upvoted()->get();
+		$upvotedTutorials = $user->upvoted()->paginate(10, ['*'], 'upvoted');
 
-		// return response()->json($addedTutorials);
 		return view('profile/show', compact('profile', 'addedTutorials', 'upvotedTutorials'));
 	}
 
@@ -130,11 +132,11 @@ class ProfileController extends Controller
 		// Validate request data
 		$validated = $request->validate([
 			'old_password' => [
-				'required', 
-				function($attribute, $value, $fail) {
+				'required',
+				function ($attribute, $value, $fail) {
 					// Check if old passwod is wrong
-					if (! Hash::check($value, auth()->user()->password) ) {
-						return $fail( __('Old password is wrong!') );
+					if (!Hash::check($value, auth()->user()->password)) {
+						return $fail(__('Old password is wrong!'));
 					}
 				}
 			],
@@ -148,6 +150,4 @@ class ProfileController extends Controller
 		// Redirect back with success message
 		return back()->with('passwordUpdated', 'Password updated successfully!');
 	}
-
-
 }
