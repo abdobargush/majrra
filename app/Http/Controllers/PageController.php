@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -12,9 +11,8 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __invoke($slug)
+    public function __invoke(Page $page)
     {
-        $page = Page::where('slug', $slug)->firstOrFail();
         return view('page', compact('page'));
     }
 }

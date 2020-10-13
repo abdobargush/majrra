@@ -54,4 +54,4 @@ Route::post('bookmark/{tutorial}', 'BookmarkController@update')->name('bookmarks
 /*
  * Pages
  */
-Route::get('pages/{slug}', 'PageController')->name('pages');
+Route::get('pages/{page}', 'PageController')->name('page');

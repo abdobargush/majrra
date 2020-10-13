@@ -15,6 +15,17 @@ class Page extends Model
 	 */
     protected $fillable = ['title', 'slug', 'content'];
 
+
+    /**
+     * Override the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     /**
      * Replace spaces in slug with dashes before save 
      *

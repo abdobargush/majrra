@@ -70,10 +70,10 @@
 						<a href="#" class="footer-logo">مجرة</a>
 						<ul class="footer-list mb-3 mb-md-0">
 							<li>
-								<a href="/pages/about">عن مجرة</a>
+								<a href="{{ route('page', 'about') }}">عن مجرة</a>
 							</li>
 							<li>
-								<a href="/pages/privacy">سياسة الخصوصية</a>
+								<a href="{{ route('page', 'privacy') }}">سياسة الخصوصية</a>
 							</li>
 							<li>
 								<a href="mailto:hello@majrra.com">تواصل معنا</a>
