@@ -63,10 +63,13 @@
 					إعدادات الحساب
 				</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="{{ route('logout') }}">
-					<i class="material-icons text-icon">power_settings_new</i>
-					تسجيل الخروج
-				</a>
+				<form method="POST" action="{{ route('logout') }}">
+					@csrf
+					<button class="dropdown-item" style="outline: none!important">
+						<i class="material-icons text-icon">power_settings_new</i>
+						تسجيل الخروج
+					</button>
+				</form>
 			</div>
 		</li>
 		@endauth

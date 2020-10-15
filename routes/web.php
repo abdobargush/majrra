@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
  * Auth
  */
 Auth::routes();
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/auth/{provider}', 'Auth\SocialAuthController@redirect')->name('socialAuth');
 Route::get('/auth/{provider}/callback', 'Auth\SocialAuthController@callback');
 Route::post('/auth/check', 'Auth\RegisterController@check');
