@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\ToolRequest;
+use App\Http\Requests\Admin\CategoryRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ToolCrudController
+ * Class CategoryCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class ToolCrudController extends CrudController
+class CategoryCrudController extends CrudController
 {
 	use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
 	use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class ToolCrudController extends CrudController
 	 */
 	public function setup()
 	{
-		CRUD::setModel(\App\Models\Tool::class);
-		CRUD::setRoute(config('backpack.base.route_prefix') . '/tool');
-		CRUD::setEntityNameStrings(__('Tool'), __('Tools'));
+		CRUD::setModel(\App\Models\Category::class);
+		CRUD::setRoute(config('backpack.base.route_prefix') . '/category');
+		CRUD::setEntityNameStrings(__('Category'), __('Categories'));
 	}
 
 	/**
@@ -40,14 +40,7 @@ class ToolCrudController extends CrudController
 	protected function setupListOperation()
 	{
 		CRUD::column('title')->label(__('Title'));
-		CRUD::addColumn([
-			'name' => 'tutorialsCount',
-			'label' => __('Tutorials Count'),
-			'type' => 'closure',
-			'function' => function ($tool) {
-				return $tool->tutorials()->count();
-			}
-		]);
+		CRUD::column('slug')->label(__('Slug'));
 		CRUD::column('created_at')->label(__('Created At'));
 	}
 
@@ -59,9 +52,10 @@ class ToolCrudController extends CrudController
 	 */
 	protected function setupCreateOperation()
 	{
-		CRUD::setValidation(ToolRequest::class);
+		CRUD::setValidation(CategoryRequest::class);
 
 		CRUD::field('title')->label(__('Title'));
+		CRUD::field('slug')->label(__('Slug'));
 		CRUD::addField([
 			'name' => 'thumbnail',
 			'label' => __('Thumbnail'),
@@ -69,17 +63,6 @@ class ToolCrudController extends CrudController
 			'upload' => true,
 			'aspect_ratio' => 1
 		]);
-		// CRUD::addField([
-		// 	// Select2
-		// 	'label'     => "Category",
-		// 	'type'      => 'select2',
-		// 	'name'      => 'category_id', // the db column for the foreign key
-
-		// 	// optional
-		// 	'entity'    => 'category', // the method that defines the relationship in your Model
-		// 	'model'     => "App\Models\Category", // foreign key model
-		// ]);
-		CRUD::field('category')->type('relationship')->label(__("Category"));
 	}
 
 	/**
@@ -93,6 +76,7 @@ class ToolCrudController extends CrudController
 		$this->setupCreateOperation();
 	}
 
+
 	/**
 	 * Define what happens when the Show operation is loaded.
 	 * 
@@ -105,8 +89,8 @@ class ToolCrudController extends CrudController
 			'name' => 'thumbnail',
 			'type' => 'image',
 			'label' => __('Thumbnail'),
-			'width' => '64px',
-			'height' => '64px'
+			'width' => '200px',
+			'height' => '150px',
 		]);
 
 		$this->setupListOperation();

@@ -5,11 +5,10 @@
 	border: 0;
 	margin-bottom: 20px;
 	box-shadow: $shadow-z1;
-	transition: transform .3s ease,
-				box-shadow .3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 	&.has-hover:hover {
-		box-shadow: 0 10px 15px rgba(55, 71, 79, .15);
+		box-shadow: 0 10px 15px rgba(55, 71, 79, 0.15);
 		transform: translateY(-5px);
 	}
 
@@ -30,10 +29,9 @@
 		}
 	}
 	.card-text {
-		color: #546E7A;
+		color: #546e7a;
 	}
 }
-
 
 /*--------------------------------------------------------------
 5.1 Path Card
@@ -42,7 +40,7 @@
 	padding: 20px 20px 0 20px;
 }
 .card-path .card-meta {
-	color: #546E7A;
+	color: #546e7a;
 	font-weight: 700;
 }
 
@@ -77,28 +75,29 @@
 }
 .card.card-course:hover {
 	transform: none;
-	box-shadow: 0 6px 10px rgba(55, 71, 79, .1);
+	box-shadow: 0 6px 10px rgba(55, 71, 79, 0.1);
 }
 .card-course-upvote {
-	color: #1A237E;
-	background-color: rgba(26, 35, 126, .1);
+	color: #1a237e;
+	background-color: rgba(26, 35, 126, 0.1);
 	border-radius: 5px;
 	width: 50px;
 	min-height: 65px;
 	border: 0;
 	margin-left: 20px;
-	transition: .3s ease;
+	transition: 0.3s ease;
 
 	&.active {
 		color: #fff;
-		background-color: #1A237E;
+		background-color: #1a237e;
 	}
 }
 .card-course-upvote:hover {
 	color: #fff;
-	background-color: #1A237E;
+	background-color: #1a237e;
 }
-.card-course-upvote:focus, .card-course-upvote:active {
+.card-course-upvote:focus,
+.card-course-upvote:active {
 	outline: none;
 }
 
@@ -113,12 +112,48 @@
 		margin-left: 5px;
 		font-size: 14px;
 		padding: 0 10px;
-		color: #1A237E;
-		background-color: rgba(26, 35, 126, .1);
+		color: #1a237e;
+		background-color: rgba(26, 35, 126, 0.1);
 		border-radius: 5px;
-	
+
 		&:last-child {
 			margin-left: 0;
 		}
+	}
+}
+
+/*--------------------------------------------------------------
+5.1 Category Card
+--------------------------------------------------------------*/
+.card-category {
+	position: relative;
+	height: 200px;
+	margin-bottom: 0;
+	overflow: hidden;
+
+	.card-img {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 0;
+	}
+	.card-body {
+		color: #fff;
+		background: linear-gradient(transparent, #000);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		z-index: 1;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.card-title {
+		margin-bottom: 0.35rem;
+	}
+	.card-text {
+		color: #fff;
+		opacity: 0.64;
 	}
 }

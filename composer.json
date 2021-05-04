@@ -15,7 +15,8 @@
         "laravel/telescope": "3.5.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",
-        "matthewbdaly/laravel-azure-storage": "^1.4"
+        "matthewbdaly/laravel-azure-storage": "^1.4",
+        "spatie/laravel-sluggable": "^2.6"
     },
     "require-dev": {
         "backpack/generators": "^3.1",

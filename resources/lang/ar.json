@@ -25,7 +25,7 @@
 	"Save": "حفظ",
 	"Link": "رابط",
 	"Bio": "نبذة تعريفية",
-	"Your profile was updated successfully." : "تم تحديث ملفك الشخصي بنجاح.",
+	"Your profile was updated successfully.": "تم تحديث ملفك الشخصي بنجاح.",
 	"Old Password": "كلمة المرور القديمة",
 	"New Password": "كلمة المرور الجديدة",
 	"Confirm Password": "تأكيد كلمة المرور",
@@ -120,5 +120,7 @@
 	"Thank you for using majrra and sharing the knowlegde!": "شكرا لك على استخدام مجرة ومشاركة المعرفة!",
 	"Please enter your email address and we will send you password reset link.": "من فضلك أدخل بريدك الإلكتروني حتى نقوم بإرسال رابط إعادة تعيين كلمة المرور.",
 	"Reset Your Password": "إعادة تعيين كلمة المرور",
-	"This password reset link will expire in :count minutes.": "ستنتهي صلاحية هذا الرابط بعد :count دقيقة."
+	"This password reset link will expire in :count minutes.": "ستنتهي صلاحية هذا الرابط بعد :count دقيقة.",
+	"Categories": "التصنيفات",
+	"Category": "تصنيف"
 }

@@ -5,20 +5,24 @@ use Illuminate\Support\Facades\Route;
 /*
  * Auth
  */
+
 Auth::routes();
 Route::get('/auth/{provider}', 'Auth\SocialAuthController@redirect')->name('socialAuth');
 Route::get('/auth/{provider}/callback', 'Auth\SocialAuthController@callback');
 Route::post('/auth/check', 'Auth\RegisterController@check');
+
 
 /*
  * Home
  */
 Route::get('', 'HomeController')->name('home');
 
+
 /*
  *	Search
  */
 Route::get('search', 'SearchController')->name('search');
+
 
 /*
  *	Profile
@@ -29,12 +33,14 @@ Route::patch('profile/edit/{user}/info', 'ProfileController@updateInfo')->middle
 Route::patch('profile/edit/{user}/settings', 'ProfileController@updateSettings')->middleware('auth')->name('profile.updateSettings');
 Route::patch('profile/edit/{user}/password', 'ProfileController@updatePassword')->middleware('auth')->name('profile.updatePassword');
 
+
 /*
  * Tools
  */
 Route::resource('tools', 'ToolController')->only([
-    'index', 'show'
+	'index', 'show'
 ]);
+
 
 /*
  * Tutorials
@@ -50,7 +56,15 @@ Route::post('submit', 'SubmittedTutorialController@store')->name('tutorials.stor
 Route::get('bookmarks', 'BookmarkController@index')->name('bookmarks');
 Route::post('bookmark/{tutorial}', 'BookmarkController@update')->name('bookmarks.update');
 
+
 /*
  * Pages
  */
 Route::get('pages/{page}', 'PageController')->name('page');
+
+/*
+ * Categories
+ */
+Route::get('/{category}', [
+	\App\Http\Controllers\CategoryController::class, 'show'
+])->name('categories.show');

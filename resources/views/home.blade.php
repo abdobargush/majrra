@@ -36,6 +36,23 @@
 	</div>
 </header>
 
+<!-- Categories Section -->
+<section id="categories-section" class="container pb-0">
+	<div class="row">
+		<div class="col text-center">
+			<h4 class="section-title">{{ __('Categories') }}</h4>
+		</div>
+	</div>
+
+	<div class="row cards-catalog justify-content-center">
+		@foreach ($categories as $category)	
+			<div class="col-12 col-md-4">
+				@include('components.category-card')
+			</div>
+		@endforeach
+	</div>
+</section>
+
 <!-- Courses Section -->
 <section id="tools-section" class="container">
 	<div class="row">

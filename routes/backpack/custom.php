@@ -22,4 +22,5 @@ Route::group([
     Route::crud('submittedtutorial', 'SubmittedTutorialCrudController');
     Route::get('submittedtutorial/{id}/publish', 'SubmittedTutorialCrudController@publish');
     Route::crud('tutorial', 'TutorialCrudController');
+    Route::crud('category', 'CategoryCrudController');
 }); // this should be the absolute last line of this file
